@@ -10,6 +10,7 @@ class TreeNode{
 
 vector<vector<int>> levelOrderUsingQueue(TreeNode* root){
     vector<vector<int>> ans;
+    if(root == NULL)return ans;
     queue<TreeNode*> q;
 
     q.push(root);
