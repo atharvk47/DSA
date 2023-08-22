@@ -18,10 +18,14 @@ int height(TreeNode* root){
     return 1+max(lh,rh);
 }
 
+// Balanced Binary Tree is a binary tree which has an absolute difference between the left height and right height of every node
+// between 0 and 1.
+
+// Time Complexity: O(n^2)
 
 bool checkBBT(TreeNode* root){
     if(root == NULL){
-        return true;                   // It takes O(n^2) to execute.
+        return true;                   
     }
 
     int lh = height(root->left);
