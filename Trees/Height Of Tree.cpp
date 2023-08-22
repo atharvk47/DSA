@@ -41,7 +41,7 @@ int main(){
     t3->left = t6;
     t3->right = NULL;
 
-
+    cout << height(t1) << endl;
 
     return 0;
 }
