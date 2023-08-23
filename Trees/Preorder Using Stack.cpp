@@ -48,5 +48,9 @@ int main(){
     t3->left = t6;
     t3->right = NULL;
 
+    vector<int> preorder = PreorderUsingStack(t1);
+    for(int i = 0; i < preorder.size();i++){
+        cout << preorder[i] << endl;
+    }
     return 0;
 }
