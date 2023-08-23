@@ -8,6 +8,21 @@ class TreeNode{
     TreeNode* right;
 };
 
+vector<int> PreorderUsingStack(TreeNode* root){
+    vector<int> ans;
+    stack<TreeNode*> st;
+    if(root == NULL) return ans;
+
+    st.push(root);
+    while(!st.empty()){
+        TreeNode* temp = st.top();
+        st.pop();
+        ans.push_back(temp->data);
+        if(temp->right != NULL) st.push(temp->right);
+        if(temp->left != NULL) st.push(temp->left);
+    }
+    return ans;
+}
 
 int main(){
     TreeNode* t1 = new TreeNode();
