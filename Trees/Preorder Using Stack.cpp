@@ -8,6 +8,8 @@ class TreeNode{
     TreeNode* right;
 };
 
+// Preorder Traversal is being done using stack.
+
 vector<int> PreorderUsingStack(TreeNode* root){
     vector<int> ans;
     stack<TreeNode*> st;
