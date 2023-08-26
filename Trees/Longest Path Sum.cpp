@@ -8,12 +8,14 @@ class TreeNode{
     TreeNode* right;
 };
 
+// Longest Path Sum is nothing but the path containing the maximum sum of the values of the nodes along with it.
+
 int maxi = INT_MIN;       // Done to ensure the minimum possible value of maxi
 
 int LongestPathSum(TreeNode* root,int &maxi){
     if(root == NULL)return 0;
      
-    int leftSum = max(0,LongestPathSum(root->left,maxi));
+    int leftSum = max(0,LongestPathSum(root->left,maxi));      //maximum function is added to avoid negative node value cases
     int rightSum = max(0,LongestPathSum(root->right,maxi));
 
     maxi = max(maxi,leftSum + rightSum + root->data );
