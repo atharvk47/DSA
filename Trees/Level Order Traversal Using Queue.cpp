@@ -8,6 +8,10 @@ class TreeNode{
     TreeNode* right;
 };
 
+// This function returns a 2d-vector and traverses breadth-wise using queue.
+// Time complexity: O(N) where N stands for the number of nodes
+// Space Complexity: O(N) considering only queue
+
 vector<vector<int>> levelOrderUsingQueue(TreeNode* root){
     vector<vector<int>> ans;
     if(root == NULL)return ans;
