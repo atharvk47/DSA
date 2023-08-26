@@ -8,7 +8,7 @@ class TreeNode{
     TreeNode* right;
 };
 
-int maxi = -1;
+int maxi = INT_MIN;       // Done to ensure the minimum possible value of maxi
 
 int LongestPathSum(TreeNode* root,int &maxi){
     if(root == NULL)return 0;
