@@ -10,6 +10,9 @@ class TreeNode{
 
 int maxi = 0;
 
+// Diameter of a binary tree is the longest path of a tree between given any two nodes of the tree.
+// This pathmay or may not contain the root of the binary tree.
+// The given function modifies the value 'maxi' which stores the maximum path length and returns the height of tree.
 int Diameter(TreeNode* root,int &maxi){
     if(root ==  NULL)return 0;
 
@@ -46,8 +49,8 @@ int main(){
     t3->right = NULL;
 
     int val = Diameter(t1,maxi);
-    cout << maxi << endl;
-    cout << val << endl;
+    cout << maxi << endl;            // Denotes the diameter of tree
+    cout << val << endl;             // Denotes the height of tree
     
 
 return 0;
