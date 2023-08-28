@@ -60,5 +60,7 @@ int main(){
     s3->left = s6;
     s3->right = NULL;
 
+    cout << SimilarTree(t1,s1)<< endl;        // Output: 1
+
 return 0;
 }
