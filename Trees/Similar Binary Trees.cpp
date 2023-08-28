@@ -8,6 +8,7 @@ class TreeNode{
     TreeNode* right;
 };
 
+// SimilarTree is a boolean function which tells us whether two given roots of the binary tree are forming the same binary tree or not.
 bool SimilarTree(TreeNode* root, TreeNode* node){
     if(root==NULL || node==NULL){
         return(root == node);
