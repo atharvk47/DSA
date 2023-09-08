@@ -7,6 +7,9 @@ using namespace std;
 // 2) Given graph is an undirected graph or bidirectional graph. If it is not, remove the line AdjMatrix[v][u] inside add_edge()
 // function.
 
+
+// Adjacency Matrix consumes a space complexity of O(N*N) where N are the possible number of nodes in the graph.
+
 int AdjMatrix[20][20] = {0};                       // This is an adjacency matrix initialized to zero
 
 void displayMatrix(int v)                          // Function to display matrix
