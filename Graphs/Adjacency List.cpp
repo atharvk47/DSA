@@ -7,12 +7,12 @@ using namespace std;
 // 2) Given graph is an undirected graph or bidirectional graph. If it is not, remove the line adj[d].push_back(s) inside add_edge()
 // function.
 
-void addEdge(vector<int> adj[], int s, int d) {
+void addEdge(vector<int> adj[], int s, int d) {      // Function used to add an edge
   adj[s].push_back(d);
   adj[d].push_back(s);
 }
 
-void printGraph(vector<int> adj[], int V) {
+void printGraph(vector<int> adj[], int V) {          // Function used to print the entire graph
   for (int d = 0; d <= V; ++d) {
     cout << "\n Vertex "
        << d << ":";
@@ -24,9 +24,9 @@ void printGraph(vector<int> adj[], int V) {
 
 int main() {
   int V;
-  cin >> V;
+  cin >> V;                                          // Input the number of vertices present in the graph
 
-  vector<int> adj[V+1];
+  vector<int> adj[V+1];                              // Delaring an array of vectors as adjacency list
 
   addEdge(adj, 1, 2);
   addEdge(adj, 1, 3);
