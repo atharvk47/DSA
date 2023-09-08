@@ -26,7 +26,7 @@ int main() {
   int V;
   cin >> V;                                          // Input the number of vertices present in the graph
 
-  vector<int> adj[V+1];                              // Delaring an array of vectors as adjacency list
+  vector<int> adj[V+1];                              // Declaring an array of vectors as adjacency list
 
   addEdge(adj, 1, 2);
   addEdge(adj, 1, 3);
