@@ -1,9 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int AdjMatrix[20][20] = {0};                      // This is an adjacency matrix initialized to zero.
+// Assumptions:
+// 1) This is a 1-based indexing graph. If it is a 0-based indexing graph, then change the displayMatrix(v) 
+// instead of displayMatrix(v+1) inside the main function.
+// 2) Given graph is an undirected graph or bidirectional graph. If it is not, remove the line AdjMatrix[v][u] inside add_edge()
+// function.
 
-void displayMatrix(int v)                         // Function to display matrix
+int AdjMatrix[20][20] = {0};                       // This is an adjacency matrix initialized to zero
+
+void displayMatrix(int v)                          // Function to display matrix
 { 
     for (int i = 0; i < v; i++)
     {
@@ -15,10 +21,10 @@ void displayMatrix(int v)                         // Function to display matrix
     }
 }
 
-void add_edge(int u, int v)                      // Function to add edge into the matrix
+void add_edge(int u, int v)                       // Function to add edge into the matrix
 { 
     AdjMatrix[u][v] = 1;
-    AdjMatrix[v][u] = 1;
+    AdjMatrix[v][u] = 1;                          // Comment this line if it is not an undirected graph
 }
 
 int main()
@@ -32,6 +38,6 @@ int main()
         cin >> m >> n;
         add_edge(m, n);
     }
-    displayMatrix(v + 1);
+    displayMatrix(v + 1);                         // displayMatrix(v) if graph is 0-indexed
     return 0;
 }
