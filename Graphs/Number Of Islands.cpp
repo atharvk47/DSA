@@ -20,16 +20,29 @@ public:
             int col1 = q.front().second;
             q.pop();
 
-            int delRow[] = {-1,0,1,0};
-            int delCol[] = {0,1,0,-1};
-            for(int i = 0; i < 4;i++){
-                int nrow = row1 + delRow[i];
-                int ncol = col1 + delCol[i];
-                if(nrow >= 0 && nrow < n && ncol>= 0 && ncol < m && grid[nrow][ncol] == '1' && !vis[nrow][ncol]){
+            // int delRow[] = {-1,0,1,0};            // Needed for evaluating neighbours in 4 directions
+            // int delCol[] = {0,1,0,-1};
+            // for(int i = 0; i < 4;i++){
+            //     int nrow = row1 + delRow[i];
+            //     int ncol = col1 + delCol[i];
+            //     if(nrow >= 0 && nrow < n && ncol>= 0 && ncol < m && grid[nrow][ncol] == '1' && !vis[nrow][ncol]){
+            //              vis[nrow][ncol] = 1;
+            //              q.push({nrow,ncol});
+            //          }
+            // }
+
+            
+             for(int delRow = -1;delRow <= 1;delRow++){        // Needed for evaluating in 8 directions
+                 for(int delCol = -1;delCol <= 1;delCol++){
+                     int nrow = row1+delRow;
+                     int ncol = col1+delCol;
+                     if(nrow >= 0 && nrow < n && ncol>= 0 && ncol < m && grid[nrow][ncol] == '1' && !vis[nrow][ncol]){
                          vis[nrow][ncol] = 1;
                          q.push({nrow,ncol});
                      }
-            }
+                 }
+             }
+
         }
     }
     int numIslands(vector<vector<char>>& grid) {
