@@ -1,6 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Assumption:
+// 1) This is a 1-based indexing graph. If it is a 0-based indexing graph, then change the size of the vector as v 
+// instead of v+1 inside the declaration of adj vector inside main function.
+// 2) Given graph is an undirected graph or bidirectional graph. If it is not, remove the line adj[d].push_back(s) inside add_edge()
+// function.
+
 void addEdge(vector<int> adj[], int s, int d) {
   adj[s].push_back(d);
   adj[d].push_back(s);
