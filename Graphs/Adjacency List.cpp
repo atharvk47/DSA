@@ -7,6 +7,9 @@ using namespace std;
 // 2) Given graph is an undirected graph or bidirectional graph. If it is not, remove the line adj[d].push_back(s) inside add_edge()
 // function.
 
+// Adjacency List consumes a space complexity of O(|V|+|E|) as we traverse each vertex and possible traverse its neighbours only.
+// Hence, adjacency list is more efficient than adjacency matrix in terms of storage space.
+
 void addEdge(vector<int> adj[], int s, int d) {      // Function used to add an edge
   adj[s].push_back(d);
   adj[d].push_back(s);
