@@ -15,7 +15,7 @@ public:
 
         ans[row][col] = color;
 
-        for(int i = 0; i < 4;i++){
+        for(int i = 0; i < 4;i++){                          // Needed for evaluating in 4 directions
             int nrow = row + delRow[i];
             int ncol = col + delCol[i];
 
@@ -23,6 +23,16 @@ public:
                 dfs(nrow,ncol,ans,image,color,delRow,delCol,iniColor);
             }
         }
+
+        //for(int delRow = -1;delRow <= 1;delRow++){        // Needed for evaluating in 8 directions
+        //         for(int delCol = -1;delCol <= 1;delCol++){
+        //             int nrow = row1+delRow;
+        //             int ncol = col1+delCol;
+        //             if(nrow >= 0 && nrow < n && ncol>= 0 && ncol < m && image[nrow][ncol] == iniColor && ans[nrow][ncol] != color){
+        //             dfs(nrow,ncol,ans,image,color,delRow,delCol,iniColor);
+        //             }
+        //         }
+        //     }
     }
     vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
         int iniColor = image[sr][sc];
